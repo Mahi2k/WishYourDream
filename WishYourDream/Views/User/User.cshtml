@@ -1,0 +1,36 @@
+﻿@model WishYourDream.Models.Name;
+
+using x = WishYourDream.Models.Name;
+    @{ var consoleObject = Json.Serialize(@Model);}
+    <html>
+    <head>
+        <title>User</title>
+        <script>
+        function submitFormData() {
+            console.log(@consoleObject);
+        }
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <label>Prefix Name</label>
+            <input name="prefix" type="text" value="@Model.Prefix" />
+            <label>First name</label>
+            <input name="first" type="text" value="@Model.First" />
+            <br />
+            <label>Middle Name</label>
+            <input name="middle" type="text" value="@Model.Middle" />
+            <br />
+            <label>Last Name</label>
+            <input name="last" type="text" value="@Model.Last" />
+            <br />
+            <label>Suffix Name</label>
+            <input name="suffix" type="text" value="@Model.Suffix" />
+            <br />
+            <h3>FullName:</h3><h2>@Model.Prefix @Model.First @Model.Middle @Model.Last @Model.Suffix</h2>
+            <button onclick="submitFormData()">Submit</button>
+        </div>
+    </body>
+
+</html>
